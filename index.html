@@ -5,148 +5,250 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>My Portfolio</title>
 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
+
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family:'Poppins', sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
-      background:#000;
+      background:#111;
       color:white;
       overflow-x:hidden;
     }
 
-    /* 背景圖片 */
+    /* ========================= */
+    /* 背景 Hero */
+    /* ========================= */
+
     .hero{
       width:100%;
       min-height:100vh;
+
       background:
-        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.6)),
-        url("me.jpg") center/cover no-repeat;
-      display:flex;
-      justify-content:center;
-      align-items:center;
+      linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+      url("me.jpg") center center/cover no-repeat;
+
       position:relative;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+
+      padding:40px;
     }
 
-    /* 上方導覽列 */
+    /* ========================= */
+    /* Navbar */
+    /* ========================= */
+
     nav{
       position:absolute;
-      top:0;
-      left:0;
-      width:100%;
+      top:25px;
+      left:20px;
+      right:20px;
+
+      background:rgba(255,255,255,0.92);
+
+      border-radius:18px;
+
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:25px 60px;
-      z-index:10;
+
+      padding:18px 40px;
+
+      backdrop-filter:blur(8px);
     }
 
-    nav h1{
-      font-size:32px;
-      letter-spacing:3px;
+    .logo{
+      background:#8b6f5d;
+      color:white;
+
+      padding:18px 40px;
+
+      border-radius:12px;
+
+      font-size:28px;
+      font-weight:500;
     }
 
-    nav ul{
+    .menu{
       display:flex;
-      list-style:none;
-      gap:40px;
+      gap:45px;
     }
 
-    nav a{
+    .menu a{
       text-decoration:none;
-      color:white;
-      font-size:14px;
+      color:#222;
+      font-size:20px;
       transition:0.3s;
     }
 
-    nav a:hover{
-      opacity:0.7;
+    .menu a:hover{
+      opacity:0.6;
     }
 
-    /* 中間主卡片 */
-    .card{
-      width:520px;
-      background:rgba(7,7,20,0.9);
-      padding:70px 50px;
-      border-radius:260px 260px 0 0;
-      text-align:center;
-      backdrop-filter:blur(5px);
-      box-shadow:0 0 30px rgba(0,0,0,0.4);
+    .join-btn{
+      color:#333;
+      text-decoration:none;
+
+      border-bottom:2px solid #333;
+
+      font-size:20px;
     }
 
-    .small-text{
-      font-size:18px;
-      letter-spacing:2px;
-      margin-bottom:20px;
-      opacity:0.8;
+    /* ========================= */
+    /* 左側文字 */
+    /* ========================= */
+
+    .side-text{
+      position:absolute;
+      left:40px;
+      top:42%;
+      font-size:20px;
+      font-weight:300;
+      opacity:0.9;
     }
 
-    .title{
-      font-size:90px;
-      font-weight:bold;
-      letter-spacing:5px;
-      margin-bottom:20px;
-    }
+    /* ========================= */
+    /* 中間按鈕 */
+    /* ========================= */
 
-    .subtitle{
+    .discover{
+      position:absolute;
+      right:45px;
+      top:42%;
+
+      border:2px solid rgba(255,255,255,0.7);
+      border-radius:50px;
+
+      padding:18px 35px;
+
+      text-decoration:none;
+      color:white;
+
       font-size:22px;
-      margin-bottom:40px;
-      color:#d8d8d8;
-    }
 
-    .btn{
-      display:inline-block;
-      padding:15px 40px;
-      border:1px solid white;
-      color:white;
-      text-decoration:none;
       transition:0.3s;
-      margin-top:10px;
     }
 
-    .btn:hover{
+    .discover:hover{
       background:white;
       color:black;
     }
 
-    .line{
-      width:100%;
-      height:1px;
-      background:rgba(255,255,255,0.4);
-      margin:50px 0 30px;
+    /* ========================= */
+    /* 超大標題 */
+    /* ========================= */
+
+    .big-title{
+
+      margin-top:300px;
+
+      font-size:180px;
+      line-height:0.9;
+      font-weight:300;
+
+      letter-spacing:-8px;
+
+      color:white;
     }
 
-    .footer-text{
-      font-size:14px;
-      opacity:0.7;
+    /* ========================= */
+    /* 作品區 */
+    /* ========================= */
+
+    .portfolio{
+
+      background:#f5f1ec;
+      color:#222;
+
+      padding:120px 10%;
     }
 
+    .portfolio h2{
+      font-size:70px;
+      margin-bottom:30px;
+    }
+
+    .portfolio p{
+      max-width:700px;
+      line-height:1.8;
+      font-size:20px;
+      margin-bottom:50px;
+    }
+
+    .work-btn{
+      display:inline-block;
+
+      padding:18px 45px;
+
+      background:#222;
+      color:white;
+
+      text-decoration:none;
+
+      border-radius:10px;
+
+      transition:0.3s;
+    }
+
+    .work-btn:hover{
+      transform:translateY(-3px);
+    }
+
+    /* ========================= */
+    /* Footer */
+    /* ========================= */
+
+    footer{
+      background:#111;
+      text-align:center;
+      padding:30px;
+      color:#aaa;
+      font-size:15px;
+    }
+
+    /* ========================= */
     /* 手機版 */
-    @media(max-width:768px){
+    /* ========================= */
+
+    @media(max-width:900px){
 
       nav{
-        padding:20px;
+        flex-direction:column;
+        gap:20px;
       }
 
-      nav ul{
-        gap:15px;
+      .menu{
+        gap:20px;
+        flex-wrap:wrap;
+        justify-content:center;
       }
 
-      .card{
-        width:90%;
-        padding:60px 30px;
+      .big-title{
+        font-size:90px;
+        margin-top:250px;
       }
 
-      .title{
-        font-size:60px;
+      .side-text,
+      .discover{
+        display:none;
       }
 
-      .subtitle{
-        font-size:18px;
+      .portfolio h2{
+        font-size:50px;
       }
     }
 
@@ -155,44 +257,67 @@
 
 <body>
 
-  <!-- 導覽列 -->
-  <nav>
-    <h1>MY</h1>
-
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- 主畫面 -->
+  <!-- Hero -->
   <section class="hero">
 
-    <div class="card">
+    <!-- Navbar -->
+    <nav>
 
-      <div class="small-text">WELCOME</div>
-
-      <div class="title">PORTFOLIO</div>
-
-      <div class="subtitle">
-        個人設計作品展示網站
+      <div class="logo">
+        Your Name
       </div>
 
-      <!-- 作品按鈕 -->
-      <a class="btn" href="work.pdf" target="_blank">
-        查看我的作品
+      <div class="menu">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a href="work.pdf" class="join-btn" target="_blank">
+        View Portfolio
       </a>
 
-      <div class="line"></div>
+    </nav>
 
-      <div class="footer-text">
-        Your Name ・ Personal Website
-      </div>
+    <!-- 左側文字 -->
+    <div class="side-text">
+      Welcome To My Portfolio
+    </div>
 
+    <!-- 右側按鈕 -->
+    <a href="#work" class="discover">
+      ● Discover
+    </a>
+
+    <!-- 大標題 -->
+    <div class="big-title">
+      Creative<br>
+      Portfolio
     </div>
 
   </section>
+
+  <!-- 作品區 -->
+  <section class="portfolio" id="work">
+
+    <h2>My Works</h2>
+
+    <p>
+      這裡可以放你的個人介紹、設計理念、作品風格，
+      或任何你想展示的內容。
+      你只需要把你的作品 PDF 檔命名成「work.pdf」即可。
+    </p>
+
+    <a href="work.pdf" target="_blank" class="work-btn">
+      Open My Work PDF
+    </a>
+
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
+    © 2026 Your Name ｜ Personal Website
+  </footer>
 
 </body>
 </html>
