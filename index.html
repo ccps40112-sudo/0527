@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+      background:#000;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    /* 背景圖片 */
+    .hero{
+      width:100%;
+      min-height:100vh;
+      background:
+        linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.6)),
+        url("me.jpg") center/cover no-repeat;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+    }
+
+    /* 上方導覽列 */
+    nav{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:25px 60px;
+      z-index:10;
+    }
+
+    nav h1{
+      font-size:32px;
+      letter-spacing:3px;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:40px;
+    }
+
+    nav a{
+      text-decoration:none;
+      color:white;
+      font-size:14px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      opacity:0.7;
+    }
+
+    /* 中間主卡片 */
+    .card{
+      width:520px;
+      background:rgba(7,7,20,0.9);
+      padding:70px 50px;
+      border-radius:260px 260px 0 0;
+      text-align:center;
+      backdrop-filter:blur(5px);
+      box-shadow:0 0 30px rgba(0,0,0,0.4);
+    }
+
+    .small-text{
+      font-size:18px;
+      letter-spacing:2px;
+      margin-bottom:20px;
+      opacity:0.8;
+    }
+
+    .title{
+      font-size:90px;
+      font-weight:bold;
+      letter-spacing:5px;
+      margin-bottom:20px;
+    }
+
+    .subtitle{
+      font-size:22px;
+      margin-bottom:40px;
+      color:#d8d8d8;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:15px 40px;
+      border:1px solid white;
+      color:white;
+      text-decoration:none;
+      transition:0.3s;
+      margin-top:10px;
+    }
+
+    .btn:hover{
+      background:white;
+      color:black;
+    }
+
+    .line{
+      width:100%;
+      height:1px;
+      background:rgba(255,255,255,0.4);
+      margin:50px 0 30px;
+    }
+
+    .footer-text{
+      font-size:14px;
+      opacity:0.7;
+    }
+
+    /* 手機版 */
+    @media(max-width:768px){
+
+      nav{
+        padding:20px;
+      }
+
+      nav ul{
+        gap:15px;
+      }
+
+      .card{
+        width:90%;
+        padding:60px 30px;
+      }
+
+      .title{
+        font-size:60px;
+      }
+
+      .subtitle{
+        font-size:18px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- 導覽列 -->
+  <nav>
+    <h1>MY</h1>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- 主畫面 -->
+  <section class="hero">
+
+    <div class="card">
+
+      <div class="small-text">WELCOME</div>
+
+      <div class="title">PORTFOLIO</div>
+
+      <div class="subtitle">
+        個人設計作品展示網站
+      </div>
+
+      <!-- 作品按鈕 -->
+      <a class="btn" href="work.pdf" target="_blank">
+        查看我的作品
+      </a>
+
+      <div class="line"></div>
+
+      <div class="footer-text">
+        Your Name ・ Personal Website
+      </div>
+
+    </div>
+
+  </section>
+
+</body>
+</html>
